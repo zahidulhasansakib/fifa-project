@@ -40,8 +40,15 @@
   color: #ffffff;
   margin: 15px 0;
 }
+img{
+  max-width: 100%;
+}
 .banner-left {
   padding-left: 40px;
+  flex: 1;
+}
+.banner-right{
+  flex: 1;
 }
 .banner-right img {
   display: block;
@@ -72,6 +79,9 @@
 .upcomming-matches-right{
 
     flex: 1;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 10px;
 
 }
 .upcomming-matches-right .card{
@@ -106,5 +116,48 @@ background: url(Egypt-Senegal-1024x683);
     display: flex;
     gap: 20px;
     color: #161616cc;
+}
+@media screen and (max-width:992px) {
+
+  .banner h2 {
+  font-size: 50px;
+  font-weight: 700;
+  line-height: 50px;
+}
+   .upcomming-matches{
+    flex-direction: column;
+   }
+   .upcomming-matches-left{
+    flex-direction: row;
+    width: 100%;
+    background-color: transparent;
+   }
+   .upcomming-matches-left >*{
+    flex: 1;
+   }
+   .upcomming-matches-left .btn{
+    border: 1px solid rgb(232,232, 232);
+   }
+  .upcomming-matches-right{
+    grid-template-columns: repeat(2,1fr);
+  }
+}
+@media screen and (max-width:768px) {
+  .banner{
+    flex-direction: column;
+    text-align: center;
+  }
+  .banner .banner-left{
+    margin-bottom: 50px;
+    padding-left: 0px;
+    padding-top: 30px;
+  }
+    .banner .banner-left p{
+    max-width:100%    ;
+  }
+  .upcomming-matches-right{
+    grid-template-columns: repeat(1,1fr);
+  }
+  
 }
 
